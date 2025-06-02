@@ -34,7 +34,7 @@ Here's a sample of some icons:
 ## HTML
 
 <!-- Use div tag for good format and it will show them in one line, without div tag it will be displayed on multiple lines -->
-<div>
+<div style="display: flex; gap: 2px; align-items: center;">
 <img src="https://iconic-api.onrender.com/dark/python" width="64px" />
 <img src="https://iconic-api.onrender.com/dark/html" width="64px" />
 <img src="https://iconic-api.onrender.com/dark/js" width="64px" />
@@ -46,11 +46,21 @@ Here's a sample of some icons:
 
 ### Dark:
 
-<img src="https://iconic-api.onrender.com/dark/python" width="50px" title="Python" /> <img src="https://iconic-api.onrender.com/dark/html" width="50px" title="HTML" /> <img src="https://iconic-api.onrender.com/dark/js" width="50px" title="Javascript" /> <img src="https://iconic-api.onrender.com/dark/dart" width="50px" title="Dart" />
+<div style="display: flex; gap: 2px; align-items: center;">
+<img src="https://iconic-api.onrender.com/dark/python" width="50px" title="Python" />
+<img src="https://iconic-api.onrender.com/dark/html" width="50px" title="HTML" />
+<img src="https://iconic-api.onrender.com/dark/dart" width="50px" title="Dart" />
+  <img src="https://iconic-api.onrender.com/dark/inkscape" width="50px" title="Inkscape" />
+<div>
 
 ### Light:
 
-<img src="https://iconic-api.onrender.com/light/css" width="50px" title="css" /> <img src="https://iconic-api.onrender.com/light/bash" width="50px" title="Bash" /> <img src="https://iconic-api.onrender.com/light/clojure" width="50px" title="Clojure" /> <img src="https://iconic-api.onrender.com/light/csharp" width="50px" title="C#" />
+<div style="display: flex; gap: 2px; align-items: center;">
+<img src="https://iconic-api.onrender.com/light/rust" width="50px" title="Rust" />
+<img src="https://iconic-api.onrender.com/light/cpp" width="50px" title="C++" />
+<img src="https://iconic-api.onrender.com/light/pycharm" width="50px" title="Pycharm" />
+  <img src="https://iconic-api.onrender.com/light/jupyter" width="50px" title="Jupyter" />
+<div>
 
 ## 🚀 Getting Started (Dev Setup)
 
