@@ -13,18 +13,21 @@
             crossorigin="anonymous"
         ></script>
         <style>
-            @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+            @import url("https://fonts.googleapis.com/css2?family=Inter&family=Montserrat&family=Poppins&display=swap");
+
             * {
                 margin: 0;
                 padding: 0;
                 box-sizing: border-box;
             }
+
             body {
                 font-family: system-ui, sans-serif;
                 background: #092635;
                 padding: 20px;
                 color: #ddd;
             }
+
             nav {
                 display: flex;
                 align-items: center;
@@ -37,24 +40,29 @@
                 z-index: 100;
                 width: 100%;
             }
+
             nav ul {
                 display: flex;
                 align-items: center;
                 gap: 20px;
                 list-style: none;
             }
+
             nav ul a {
                 font-size: 1.35rem;
                 color: #5c8374;
                 text-decoration: none;
                 transition: 0.3s ease;
             }
+
             nav ul a:hover {
                 color: #9ec8b9;
             }
+
             main {
                 margin: 100px auto;
             }
+
             h1 {
                 text-align: center;
                 font-size: 2.75rem;
@@ -65,6 +73,7 @@
                 animation: fadeInText 0.7s ease forwards;
                 animation-delay: 0.7s;
             }
+
             h2 {
                 font-family: Poppins, sans-serif;
                 font-weight: 300;
@@ -75,9 +84,11 @@
                 animation: fadeInText 0.7s ease forwards;
                 animation-delay: 0.7s;
             }
+
             .section {
                 margin-top: 40px;
             }
+
             .icon-grid {
                 display: flex;
                 flex-wrap: wrap;
@@ -85,6 +96,7 @@
                 opacity: 0;
                 animation: fadeInPage 0.8s ease forwards;
             }
+
             .icon-container {
                 width: 100px;
                 text-align: center;
@@ -98,12 +110,14 @@
                 background: #1b4242;
                 transition: 100ms ease-out;
             }
+
             .icon-container img:hover {
                 background: #9ec8b9;
                 box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
                 width: 60px;
                 height: 60px;
             }
+
             .label {
                 font-size: 12px;
                 margin: 6px 0;
@@ -113,17 +127,40 @@
                 cursor: pointer;
                 font-family: Montserrat, sans-serif;
                 font-weight: 600;
+                max-width: 100px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
             }
+
             .footer-links {
                 margin-top: 30px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
+            }
 
-                a {
-                    font-size: 2rem;
-                    color: #9ec8b9;
-                }
+            .footer-links a {
+                font-size: 2rem;
+                color: #9ec8b9;
+            }
+
+            button.toggle-btn {
+                margin: 30px auto;
+                display: block;
+                background-color: #1b4242;
+                color: #9ec8b9;
+                border: none;
+                padding: 10px 20px;
+                font-family: Inter, sans-serif;
+                font-weight: 500;
+                border-radius: 12px;
+                cursor: pointer;
+            }
+
+            button.toggle-btn:hover {
+                background-color: #5c8374;
+                color: #fff;
             }
 
             @keyframes fadeInText {
@@ -131,6 +168,7 @@
                     opacity: 1;
                 }
             }
+
             @keyframes fadeInPage {
                 to {
                     opacity: 1;
@@ -140,12 +178,13 @@
     </head>
     <body>
         <nav>
-            <span
-                ><img
+            <span>
+                <img
                     src="https://raw.githubusercontent.com/YuheshPandian/ICONIC/refs/heads/main/assets/Banner.svg"
                     alt="Logo"
                     width="150px"
-            /></span>
+                />
+            </span>
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/gallery">Gallery</a></li>
@@ -156,41 +195,46 @@
                 </li>
             </ul>
         </nav>
+
         <main>
             <h1>Icon Gallery</h1>
 
-            <div class="section">
-                <h2>Dark Theme Icons</h2>
-                <div class="icon-grid">
-                    {% for icon in dark_icons %}
-                    <div class="icon-container">
-                        <img
-                            src="/dark/{{ icon|cut:'.svg' }}"
-                            alt="{{ icon }}"
-                        />
-                        <div class="label" onclick="copyLabelText(this)">
-                            {{ icon|cut:'.svg' }}
-                        </div>
+            <button class="toggle-btn" onclick="toggleTheme()">
+                Toggle Icon Theme
+            </button>
+
+            <div id="icon-section-dark" class="icon-grid">
+                {% for icon in dark_icons %}
+                <div class="icon-container">
+                    <img src="/dark/{{ icon|cut:'.svg' }}" alt="{{ icon }}" />
+                    <div class="label" onclick="copyLabelText(this)">
+                        {{ icon|cut:'.svg' }}
                     </div>
-                    {% endfor %}
                 </div>
+                {% endfor %}
             </div>
 
-            <div class="section">
-                <h2>Light Theme Icons</h2>
-                <div class="icon-grid">
-                    {% for icon in light_icons %}
-                    <div class="icon-container">
-                        <img
-                            src="/light/{{ icon|cut:'.svg' }}"
-                            alt="{{ icon }}"
-                        />
-                        <div class="label" onclick="copyLabelText(this)">
-                            {{ icon|cut:'.svg' }}
-                        </div>
+            <div
+                id="icon-section-light"
+                class="icon-grid"
+                style="display: none"
+            >
+                {% for icon in light_icons %}
+                <div class="icon-container">
+                    <img
+                        src="/light/{{ icon|cut:'.svg' }}"
+                        alt="{{ icon }}"
+                        style="background: #9ec8b9"
+                    />
+                    <div
+                        class="label"
+                        onclick="copyLabelText(this)"
+                        style="background: #9ec8b9; color: #092635"
+                    >
+                        {{ icon|cut:'.svg' }}
                     </div>
-                    {% endfor %}
                 </div>
+                {% endfor %}
             </div>
         </main>
 
@@ -211,6 +255,25 @@
                     .catch((err) => {
                         console.error("Failed to copy:", err);
                     });
+            }
+
+            let isDarkTheme = true;
+
+            function toggleTheme() {
+                const darkSection =
+                    document.getElementById("icon-section-dark");
+                const lightSection =
+                    document.getElementById("icon-section-light");
+
+                if (isDarkTheme) {
+                    darkSection.style.display = "none";
+                    lightSection.style.display = "flex";
+                } else {
+                    darkSection.style.display = "flex";
+                    lightSection.style.display = "none";
+                }
+
+                isDarkTheme = !isDarkTheme;
             }
         </script>
     </body>
