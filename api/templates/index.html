@@ -126,6 +126,21 @@
                 animation-delay: 0.7s;
             }
 
+            .preview-section div a {
+                font-family: Montserrat, sans-serif;
+                background: #9ec8b9;
+                padding: 4px;
+                border-radius: 4px;
+                text-decoration: none;
+                color: #092635;
+                margin: auto;
+                transition:200ms ease;
+            }
+
+            .preview-section div a:hover{
+                background: #5c8374;
+            }
+
             @keyframes fadeInText {
                 to {
                     opacity: 1;
@@ -219,10 +234,10 @@
                     img {
                         width:100px;
                     }
-
-                    position: absolute;
-                    left:0;
-                    top:25px
+                    justify-self:flex-start;
+                    position:absolute;
+                    left:10px;
+                    top:24px;
 
                 }
 
@@ -250,6 +265,57 @@
                 ul li {
                     font-size:1.25rem;
                 }
+            }
+
+            @media (max-width:480px) {
+
+                body {
+                    background: #092635;
+                }
+
+                nav ul li a {
+                    font-size:1.35rem;
+                }
+                nav .logo {
+                    top:16px;
+                }
+                nav .logo img {
+                    content:url("https://raw.githubusercontent.com/YuheshPandian/ICONIC/refs/heads/main/icons/dark/iconic.svg");
+                    width:50px;
+
+                }
+
+                h1 {
+                    font-size:2.25rem;
+                }
+                h2 {
+                    font-size:2rem;
+                }
+                p {
+                    font-size:1rem;
+                }
+
+                main ul li{
+                    font-size:1.05rem;
+                }
+
+                .quick-preview-header {
+                    display:none;
+                }
+                .preview-img {
+                    z-index:-1;
+                    margin-block:10px;
+                }
+                .preview-section {
+                    display: grid;
+                    place-content: center;
+
+                    > * {
+                        grid-area: 1 / 1;
+                    }
+                }
+
+
             }
         </style>
     </head>
@@ -282,28 +348,20 @@
                 Easily find and use icons that suit both Dark and Light modes.
             </p>
 
-            <h2>Quick Preview</h2>
-            <img
-                src="https://raw.githubusercontent.com/YuheshPandian/ICONIC/refs/heads/main/assets/preview-img.png"
-                alt="preview-of-icons"
-                width="900px"
-                class="preview-img"
-            />
-            <div style="width: 100%; display: flex; justify-content: center">
-                <a
-                    href="/gallery"
-                    style="
-                        font-family: Montserrat, sans-serif;
-                        background: #9ec8b9;
-                        padding: 4px;
-                        border-radius: 4px;
-                        text-decoration: none;
-                        color: #092635;
-                        margin: auto;
-                    "
-                    >Load More</a
+            <section class="preview-section">
+                <h2 class="quick-preview-header">Quick Preview</h2>
+                <img
+                    src="https://raw.githubusercontent.com/YuheshPandian/ICONIC/refs/heads/main/assets/preview-img.png"
+                    alt="preview-of-icons"
+                    width="900px"
+                    class="preview-img"
+                />
+                <div
+                    style="width: 100%; display: flex; justify-content: center"
                 >
-            </div>
+                    <a href="/gallery">Load More</a>
+                </div>
+            </section>
 
             <h2>Highlights</h2>
 
