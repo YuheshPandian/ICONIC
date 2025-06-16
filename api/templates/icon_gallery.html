@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>ICONIC Gallery</title>
         <link
             rel="icon"
@@ -36,9 +37,10 @@
                 position: fixed;
                 top: 0;
                 left: 0;
-                padding: 12px 16px;
                 z-index: 100;
                 width: 100%;
+                padding: 12px 16px;
+                min-height: 80px;
             }
 
             nav ul {
@@ -174,27 +176,136 @@
                     opacity: 1;
                 }
             }
+
+            @media (max-width: 900px) {
+                body {
+                    font-size: 18px;
+                    padding: 0;
+                }
+
+                main {
+                    padding-inline: 1rem;
+                }
+                nav {
+                    justify-content: center;
+                    align-items: center;
+                    ul li a {
+                        font-size: 1.55rem;
+                    }
+                }
+                nav .logo {
+                    img {
+                        width: 100px;
+                    }
+                    justify-self: flex-start;
+                    position: absolute;
+                    left: 10px;
+                    top: 24px;
+                }
+
+                nav ul li:last-child {
+                    position: absolute;
+                    right: 10px;
+                }
+
+                h1 {
+                    font-size: 2.25rem;
+                }
+
+                .icon-grid {
+                    gap: 12px;
+                }
+
+                .icon-container {
+                    width: 70px;
+                }
+
+                .icon-container img {
+                    width: 48px;
+                    height: 48px;
+                }
+
+                .icon-container img:hover {
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+
+            @media (max-width: 480px) {
+                body {
+                    background: #092635;
+                    margin-inline: 0;
+                    padding: 0;
+                }
+
+                nav ul li a {
+                    font-size: 1.35rem;
+                }
+                nav .logo {
+                    top: 16px;
+                }
+                nav .logo img {
+                    content: url("https://raw.githubusercontent.com/YuheshPandian/ICONIC/refs/heads/main/icons/dark/iconic.svg");
+                    width: 50px;
+                }
+
+                h1 {
+                    font-size: 2.25rem;
+                }
+
+                .icon-grid {
+                    gap: 8px;
+                }
+
+                .icon-container {
+                    width: 60px;
+                    position: relative;
+                }
+
+                .icon-container img {
+                    width: 54px;
+                    height: 54px;
+                }
+
+                .icon-container img:hover {
+                    width: 54px;
+                    height: 54px;
+                }
+
+                .icon-container .label {
+                    display: none;
+                }
+
+                .icon-container:focus {
+                    .label {
+                        display: absolute;
+                        z-index: 100;
+                        opacity:65%;%
+                    }
+                }
+            }
         </style>
     </head>
     <body>
-        <nav>
-            <span>
-                <img
-                    src="https://raw.githubusercontent.com/YuheshPandian/ICONIC/refs/heads/main/assets/Banner.svg"
-                    alt="Logo"
-                    width="150px"
-                />
-            </span>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/gallery">Gallery</a></li>
-                <li>
-                    <a href="https://github.com/YuheshPandian/ICONIC"
-                        ><i class="fa-brands fa-github"></i
-                    ></a>
-                </li>
-            </ul>
-        </nav>
+        <header>
+            <nav>
+                <span class="logo"
+                    ><img
+                        src="https://raw.githubusercontent.com/YuheshPandian/ICONIC/refs/heads/main/assets/Banner.svg"
+                        alt="Logo"
+                        width="150px"
+                /></span>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/gallery/">Gallery</a></li>
+                    <li>
+                        <a href="https://github.com/YuheshPandian/ICONIC"
+                            ><i class="fa-brands fa-github"></i
+                        ></a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
 
         <main>
             <h1>Icon Gallery</h1>
