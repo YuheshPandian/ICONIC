@@ -9,7 +9,7 @@
    id="svg1"
    xml:space="preserve"
    inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
-   sodipodi:docname="vercel.svg"
+   sodipodi:docname="mint-linux.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -25,8 +25,8 @@
      inkscape:document-units="px"
      showgrid="false"
      inkscape:zoom="1"
-     inkscape:cx="313"
-     inkscape:cy="277.5"
+     inkscape:cx="161"
+     inkscape:cy="323.5"
      inkscape:window-width="1920"
      inkscape:window-height="1001"
      inkscape:window-x="-9"
@@ -42,7 +42,7 @@
        empcolor="#0099e5"
        empopacity="0.30196078"
        color="#0099e5"
-       opacity="0.14901961"
+       opacity="0.14902"
        empspacing="5"
        enabled="true"
        visible="false" /></sodipodi:namedview><defs
@@ -66,15 +66,29 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"><circle
-       style="fill:#f2f2f2;fill-opacity:1;stroke:#afafaf;stroke-width:8;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#2e3548;fill-opacity:1;stroke:#858585;stroke-width:8;stroke-dasharray:none;stroke-opacity:1"
        id="path1"
        inkscape:label="background"
        cx="256.00003"
        cy="256.00006"
        r="241.31339" /><g
-       style="fill:#000000"
-       id="g1"
-       transform="matrix(0.67307692,0,0,0.67307692,83.692308,63.692308)"><path
-         fill-rule="evenodd"
-         d="M 256,48 496,464 H 16 Z"
-         id="path1-8" /></g></g></svg>
+       id="g2"
+       transform="matrix(2.1990741,0,0,2.1990741,-25.481485,-25.481485)">
+	
+	<circle
+   class="st1"
+   cx="128"
+   cy="128"
+   r="108"
+   id="circle2" />
+	<path
+   id="_x3C_Path_x3E_"
+   class="st2"
+   d="m 58,63 v 90 c 0.1,22.1 17.9,39.9 40,40 h 60 c 22.1,-0.1 39.9,-17.9 40,-40 v -50 c -0.1,-16.5 -13.5,-29.9 -30,-30 -7.4,0 -14.5,2.8 -20,7.9 -5.5,-5 -12.6,-7.8 -20,-7.9 -16.5,0.1 -29.9,13.5 -30,30 v 50 h 20 v -50 c 0,-5.5 4.5,-10 10,-10 5.5,0 10,4.5 10,10 v 50 h 20 v -50 c 0,-5.5 4.5,-10 10,-10 5.5,0 10,4.5 10,10 v 50 c 0.1,11 -8.8,19.9 -19.7,20 -0.1,0 -0.2,0 -0.3,0 H 98 c -11,0.1 -19.9,-8.8 -20,-19.7 0,-0.1 0,-0.2 0,-0.3 V 63 Z" />
+</g></g><style
+     type="text/css"
+     id="style1">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#69B53F;}
+	.st2{fill:#F8F8F8;}
+</style></svg>
