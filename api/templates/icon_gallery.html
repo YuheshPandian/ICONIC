@@ -283,6 +283,9 @@
                         opacity:65%;%
                     }
                 }
+                .copy-info-text {
+                    display:none;
+                }
             }
         </style>
     </head>
@@ -314,11 +317,22 @@
                 Toggle Icon Theme
             </button>
 
+            <p
+                style="
+                    color: #5c8374de;
+                    font-family: poppins, sans-serif;
+                    margin-block: 20px;
+                "
+                class="copy-info-text"
+            >
+                Click on label to copy HTML snippet
+            </p>
+
             <div id="icon-section-dark" class="icon-grid">
                 {% for icon in dark_icons %}
                 <div class="icon-container">
                     <img src="/dark/{{ icon|cut:'.svg' }}" alt="{{ icon }}" />
-                    <div class="label" onclick="copyLabelText(this)">
+                    <div class="label" onclick="copyLabelText(this,'dark')">
                         {{ icon|cut:'.svg' }}
                     </div>
                 </div>
@@ -339,7 +353,7 @@
                     />
                     <div
                         class="label"
-                        onclick="copyLabelText(this)"
+                        onclick="copyLabelText(this,'light')"
                         style="background: #9ec8b9; color: #092635"
                     >
                         {{ icon|cut:'.svg' }}
@@ -356,15 +370,54 @@
         </div>
 
         <script>
-            function copyLabelText(element) {
+            function showPopup(message) {
+                const popup = document.createElement("div");
+                popup.textContent = message;
+
+                Object.assign(popup.style, {
+                    position: "fixed",
+                    bottom: "40px",
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    background: "#5c8374de",
+                    color: "#fff",
+                    padding: "10px 20px",
+                    borderRadius: "10px",
+                    fontFamily: "Inter, sans-serif",
+                    fontSize: "1rem",
+                    boxShadow: "0 4px 12px rgba(0, 0, 0, 0.25)",
+                    opacity: "1",
+                    transition: "opacity 0.4s ease",
+                    zIndex: "9999",
+                });
+
+                document.body.appendChild(popup);
+
+                setTimeout(() => {
+                    popup.style.opacity = "0";
+                }, 2000);
+                setTimeout(() => {
+                    popup.remove();
+                }, 2500);
+            }
+
+            function copyLabelText(element, theme) {
                 const text = element.textContent.trim();
+                const content = `<img src="https://iconic-api.onrender.com/${theme}/${text}" width="64px" />`;
+
+                if (!navigator.clipboard) {
+                    showPopup("Clipboard not supported");
+                    return;
+                }
+
                 navigator.clipboard
-                    .writeText(text)
+                    .writeText(content)
                     .then(() => {
-                        alert(`Copied "${text}" to clipboard!`);
+                        showPopup(`Copied "${text}" to clipboard!`);
                     })
                     .catch((err) => {
-                        console.error("Failed to copy:", err);
+                        console.error("Clipboard copy failed:", err);
+                        showPopup("Failed to copy!");
                     });
             }
 
