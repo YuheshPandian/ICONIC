@@ -92,8 +92,8 @@
             }
 
             .icon-grid {
-                display: flex;
-                flex-wrap: wrap;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
                 gap: 16px;
                 opacity: 0;
                 animation: fadeInPage 0.8s ease forwards;
@@ -218,6 +218,7 @@
 
                 .icon-grid {
                     gap: 12px;
+                    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
                 }
 
                 .icon-container {
@@ -259,6 +260,7 @@
 
                 .icon-grid {
                     gap: 8px;
+                    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
                 }
 
                 .icon-container {
