@@ -147,9 +147,47 @@
                 }
             }
 
-            ul {
+            .highlights ul {
                 padding-left: 1.5rem;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                list-style:none;
+                gap:1rem;
+                margin-block:2rem;
             }
+
+            .highlights ul li {
+                background:#1b4242;
+                padding:8px;
+                border-radius:6px;
+                position: relative;
+                box-shadow:0px 0px 1px #333;
+                transition:300ms ease-in;
+            }
+
+            .highlights ul li:before {
+                width:8px;
+                content:"";
+                height:8px;
+                background:#5c8374;
+                position:absolute;
+                left:-4px;
+                top:-4px;
+                border-radius:1px;
+
+
+            }
+
+            .highlights ul li:hover {
+                background:#5c8374;
+                color:#092635;
+                z-index:10;
+            }
+
+            .highlights ul li:hover:before {
+                display:none;
+            }
+
 
             footer {
                 margin-block: 3rem;
@@ -262,8 +300,19 @@
                     font-size:1.55rem;
                 }
 
+
                 ul li {
                     font-size:1.25rem;
+                }
+
+                .highlights ul {
+                    grid-template-columns:1fr 1fr;
+
+                }
+                .highlights ul li {
+                    padding:8px;
+                    font-size:1.05rem;
+                    min-height:60px;
                 }
             }
 
@@ -297,6 +346,17 @@
 
                 main ul li{
                     font-size:1.05rem;
+                }
+
+                .highlights ul {
+                    grid-template-columns: 1fr;
+
+                }
+                .highlights ul li {
+                    padding:8px;
+                    font-size:0.9rem;
+                    min-height:30px;
+                    width:100%;
                 }
 
                 .quick-preview-header {
@@ -363,16 +423,18 @@
                 </div>
             </section>
 
-            <h2>Highlights</h2>
+            <section class="highlights">
+                <h2>Highlights</h2>
 
-            <ul>
-                <li>Bubble-shaped, developer-focused icons</li>
-                <li>Light and dark theme variants</li>
-                <li>Easy to embed with HTML snippet</li>
-                <li>Downloadable, high-quality SVGs</li>
-                <li>API-powered dynamic icon fetching</li>
-                <li>Open source and contribution-friendly</li>
-            </ul>
+                <ul>
+                    <li>Bubble-shaped, developer-focused icons</li>
+                    <li>Light and dark theme variants</li>
+                    <li>Easy to embed with HTML snippet</li>
+                    <li>Downloadable, high-quality SVGs</li>
+                    <li>API-powered dynamic icon fetching</li>
+                    <li>Open source and contribution-friendly</li>
+                </ul>
+            </section>
 
             <h2>Join the Project</h2>
 

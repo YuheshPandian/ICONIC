@@ -1,4 +1,4 @@
-<img src="assets/Banner.svg"/>
+<img src="assets/social_banner.png"/>
 
 > Be iconic, not generic.  
 > A dev-focused library of sleek, bubble-shaped skill icons built for GitHub READMEs, portfolios, and resumes.
@@ -20,9 +20,6 @@
 -   🧩 Easy to embed in Markdown, HTML, or anywhere
 -   ⚙️ HTML preview API with Django backend
 -   💾 Download-ready SVGs
-
-Here is a screenshot of several icons designed by ICONIC team.
-![image](assets/preview-img.png)
 
 ---
 
