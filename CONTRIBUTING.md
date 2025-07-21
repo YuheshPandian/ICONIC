@@ -41,7 +41,7 @@ If you're modifying the Django API backend:
 ```bash
 cd api
 pip install -r requirements.txt
-python manage.py runserver
+python api/manage.py runserver
 ```
 
 Make sure everything still works — especially the preview routes!
@@ -66,7 +66,7 @@ git push origin add-icon-python
 
 ### 5. Submit a Pull Request
 
-Open a pull request on GitHub with a clear title and description of what you’ve added or changed.
+Open a pull request on GitHub with a clear title and description of what you’ve added or changed. Utilize the PR template to streamline the process.
 
 ---
 
@@ -76,6 +76,8 @@ Open a pull request on GitHub with a clear title and description of what you’v
 - Icons should be **512x512 SVGs** with minimal paths.
 - Keep it **bubble-themed**, **aesthetic**, and **legible at small sizes**.
 - Light and dark icons should have **consistent shapes**, only differing in colors( use the templates ).
+- When using Inkscape, convert the standard SVG file into a **plain SVG** format.
+- The icon file must be no larger than **10 MB**.
 
 ---
 
