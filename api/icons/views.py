@@ -32,11 +32,20 @@ def index_page(request):
 def icon_gallery_view(request):
     base_path = os.path.join(settings.BASE_DIR, "..", "icons")
 
+    query = request.GET.get("query", "").lower().strip()
+
     def load_icons(theme):
         folder = os.path.join(base_path, theme)
         if not os.path.exists(folder):
             return []
-        return sorted([f for f in os.listdir(folder) if f.endswith(".svg")])
+
+        icons = sorted([f for f in os.listdir(folder) if f.endswith(".svg")])
+        if query:
+            icons = [
+                icon for icon in icons if query in icon.removesuffix(".svg").lower()
+            ]
+
+        return icons
 
     dark_icons = load_icons("dark")
     light_icons = load_icons("light")
