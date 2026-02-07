@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -87,6 +87,50 @@
                 animation-delay: 0.7s;
             }
 
+            .search-bar {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                background: rgb(27, 66, 66);
+                width: 100%;
+                max-width: 500px;
+                margin: 20px auto;
+                padding: 10px 14px;
+                border-radius: 12px;
+                opacity: 0;
+                animation: fadeInText 0.7s ease forwards;
+                animation-delay: 0.7s;
+            }
+
+            .search-bar input {
+                flex: 1;
+                min-width: 0;
+                background: transparent;
+                outline: none;
+                border: none;
+                color: #9ec8b9;
+                font-size: 18px;
+                font-family: Inter, sans-serif;
+            }
+            .search-bar input::placeholder {
+                color: #4c7466c9;
+            }
+
+            .search-bar .search-btn {
+                background: transparent;
+                border: none;
+                color: #6b9687;
+                font-size: 18px;
+                cursor: pointer;
+                padding: 4px;
+                flex-shrink: 0;
+            }
+
+            .search-bar .search-btn:hover {
+                cursor: pointer;
+                color: #40685a;
+            }
+
             .section {
                 margin-top: 40px;
             }
@@ -162,6 +206,9 @@
                 font-weight: 500;
                 border-radius: 12px;
                 cursor: pointer;
+                opacity: 0;
+                animation: fadeInText 0.7s ease forwards;
+                animation-delay: 0.7s;
             }
 
             button.toggle-btn:hover {
@@ -258,6 +305,19 @@
                     font-size: 2.25rem;
                 }
 
+                .search-bar {
+                    max-width: 95%;
+                    padding: 8px 12px;
+                }
+
+                .search-bar input {
+                    font-size: 16px;
+                }
+
+                .search-bar .search-btn {
+                    font-size: 16px;
+                }
+
                 .icon-grid {
                     gap: 8px;
                     grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
@@ -323,6 +383,18 @@
                 Toggle Icon Theme
             </button>
 
+            <form action="/gallery/" method="GET" class="search-bar">
+                <input
+                    type="text"
+                    name="query"
+                    id="search-input"
+                    placeholder="Search Icon"
+                />
+                <button type="submit" class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+
             <p
                 style="
                     color: #5c8374de;
@@ -338,7 +410,7 @@
                 {% for icon in dark_icons %}
                 <div class="icon-container">
                     <img src="/dark/{{ icon|cut:'.svg' }}" alt="{{ icon }}" />
-                    <div class="label" onclick="copyLabelText(this,'dark')">
+                    <div class="label" onclick="copyLabelText(this, 'dark')">
                         {{ icon|cut:'.svg' }}
                     </div>
                 </div>
@@ -359,7 +431,7 @@
                     />
                     <div
                         class="label"
-                        onclick="copyLabelText(this,'light')"
+                        onclick="copyLabelText(this, 'light')"
                         style="background: #9ec8b9; color: #092635"
                     >
                         {{ icon|cut:'.svg' }}
