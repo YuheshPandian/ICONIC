@@ -44,11 +44,12 @@ def icon_gallery_view(request):
             icons = [
                 icon for icon in icons if query in icon.removesuffix(".svg").lower()
             ]
-
         return icons
 
     dark_icons = load_icons("dark")
     light_icons = load_icons("light")
+
+    icon_count = len(dark_icons)  # same as light_icons
 
     return render(
         request,
@@ -56,5 +57,7 @@ def icon_gallery_view(request):
         {
             "dark_icons": dark_icons,
             "light_icons": light_icons,
+            "icon_count": icon_count,
+            "query": query,
         },
     )

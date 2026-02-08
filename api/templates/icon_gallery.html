@@ -4,15 +4,18 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>ICONIC Gallery</title>
+
         <link
             rel="icon"
             href="https://raw.githubusercontent.com/YuheshPandian/ICONIC/refs/heads/main/icons/light/iconic.svg"
             type="image/svg+xml"
         />
+
         <script
             src="https://kit.fontawesome.com/0f7ac66354.js"
             crossorigin="anonymous"
         ></script>
+
         <style>
             @import url("https://fonts.googleapis.com/css2?family=Inter&family=Montserrat&family=Poppins&display=swap");
 
@@ -29,24 +32,25 @@
                 color: #ddd;
             }
 
+            /* NAV */
             nav {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                background: rgb(27, 66, 66);
+                background: #1b4242;
                 position: fixed;
                 top: 0;
                 left: 0;
                 z-index: 100;
                 width: 100%;
-                padding: 12px 16px;
+                padding: 12px 20px;
                 min-height: 80px;
             }
 
             nav ul {
                 display: flex;
                 align-items: center;
-                gap: 20px;
+                gap: 24px;
                 list-style: none;
             }
 
@@ -54,7 +58,7 @@
                 font-size: 1.35rem;
                 color: #5c8374;
                 text-decoration: none;
-                transition: 0.3s ease;
+                transition: 0.25s ease;
             }
 
             nav ul a:hover {
@@ -62,7 +66,7 @@
             }
 
             main {
-                margin: 100px auto;
+                margin: 120px auto 40px;
             }
 
             h1 {
@@ -71,81 +75,119 @@
                 font-family: Inter, sans-serif;
                 font-weight: 600;
                 color: #5c8374;
+                margin-bottom: 30px;
                 opacity: 0;
-                animation: fadeInText 0.7s ease forwards;
-                animation-delay: 0.7s;
+                animation: fadeInText 0.7s ease forwards 0.5s;
             }
 
-            h2 {
-                font-family: Poppins, sans-serif;
-                font-weight: 300;
-                color: #9ec8b9;
-                border-bottom: 2px solid #1b4242;
-                margin-bottom: 20px;
+            /* CONTROLS */
+            .controls {
+                max-width: 1100px;
+                margin: 0 auto 30px;
+                padding: 18px 22px;
+                border-radius: 16px;
+                background: #0f2f2f;
+                border: 1px solid #1f4d4d;
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 16px;
+
                 opacity: 0;
-                animation: fadeInText 0.7s ease forwards;
-                animation-delay: 0.7s;
+                animation: fadeInText 0.7s ease forwards 0.7s;
+            }
+
+            .icon-count {
+                font-family: Poppins, sans-serif;
+                font-size: 0.95rem;
+                background: #9ec8b9;
+                color: #092635;
+                padding: 6px 14px;
+                border-radius: 999px;
+                white-space: nowrap;
+            }
+
+            .toggle-btn {
+                background: #1b4242;
+                color: #9ec8b9;
+                border: 1px solid #2c5f5f;
+                padding: 8px 16px;
+                font-family: Inter, sans-serif;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: 0.2s ease;
+            }
+
+            .toggle-btn:hover {
+                background: #5c8374;
+                color: #fff;
+                transform: translateY(-1px);
             }
 
             .search-bar {
+                flex: 1;
+                min-width: 240px;
                 display: flex;
                 align-items: center;
-                gap: 8px;
-                background: rgb(27, 66, 66);
-                width: 100%;
-                max-width: 500px;
-                margin: 20px auto;
-                padding: 10px 14px;
+                background: #1b4242;
+                padding: 6px 12px;
                 border-radius: 12px;
-                opacity: 0;
-                animation: fadeInText 0.7s ease forwards;
-                animation-delay: 0.7s;
+                border: 1px solid #2c5f5f;
             }
 
             .search-bar input {
                 flex: 1;
-                min-width: 0;
                 background: transparent;
-                outline: none;
                 border: none;
+                outline: none;
                 color: #9ec8b9;
-                font-size: 18px;
+                font-size: 16px;
                 font-family: Inter, sans-serif;
             }
+
             .search-bar input::placeholder {
                 color: #4c7466c9;
             }
 
-            .search-bar .search-btn {
-                background: transparent;
+            .search-btn {
+                background: none;
                 border: none;
                 color: #6b9687;
                 font-size: 18px;
                 cursor: pointer;
-                padding: 4px;
-                flex-shrink: 0;
             }
 
-            .search-bar .search-btn:hover {
-                cursor: pointer;
-                color: #40685a;
+            .search-btn:hover {
+                color: #9ec8b9;
             }
 
-            .section {
-                margin-top: 40px;
+            /* INFO TEXT */
+            .copy-info-text {
+                text-align: center;
+                color: #5c8374de;
+                font-family: Poppins, sans-serif;
+                margin-bottom: 25px;
             }
 
+            /* ICON GRID */
             .icon-grid {
+                max-width: 1100px;
+                margin: auto;
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-                gap: 16px;
+                gap: 20px;
                 opacity: 0;
-                animation: fadeInPage 0.8s ease forwards;
+                animation: fadeInPage 0.8s ease forwards 0.9s;
             }
 
             .icon-container {
-                width: 100px;
                 text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
             }
 
             .icon-container img {
@@ -154,25 +196,24 @@
                 padding: 8px;
                 border-radius: 50%;
                 background: #1b4242;
-                transition: 100ms ease-out;
+                transition: 0.15s ease;
             }
 
             .icon-container img:hover {
                 background: #9ec8b9;
-                box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
-                width: 60px;
-                height: 60px;
+                transform: scale(0.9);
             }
 
             #icon-section-light .icon-container img:hover {
-                background: rgb(27, 66, 66) !important;
+                background: #1b4242 !important;
             }
 
             .label {
                 font-size: 12px;
-                margin: 6px 0;
+                min-width: 70px;
+                margin-top: 6px;
                 background: #1b4242;
-                padding: 4px 2px;
+                padding: 6px 6px;
                 border-radius: 8px;
                 cursor: pointer;
                 font-family: Montserrat, sans-serif;
@@ -184,10 +225,8 @@
             }
 
             .footer-links {
-                margin-top: 30px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+                margin-top: 50px;
+                text-align: center;
             }
 
             .footer-links a {
@@ -195,175 +234,40 @@
                 color: #9ec8b9;
             }
 
-            button.toggle-btn {
-                margin: 30px auto;
-                display: block;
-                background-color: #1b4242;
-                color: #9ec8b9;
-                border: none;
-                padding: 10px 20px;
-                font-family: Inter, sans-serif;
-                font-weight: 500;
-                border-radius: 12px;
-                cursor: pointer;
-                opacity: 0;
-                animation: fadeInText 0.7s ease forwards;
-                animation-delay: 0.7s;
-            }
-
-            button.toggle-btn:hover {
-                background-color: #5c8374;
-                color: #fff;
-            }
-
             @keyframes fadeInText {
                 to {
                     opacity: 1;
                 }
             }
-
             @keyframes fadeInPage {
                 to {
                     opacity: 1;
                 }
             }
 
-            @media (max-width: 900px) {
-                body {
-                    font-size: 18px;
-                    padding: 0;
+            /* MOBILE */
+            @media (max-width: 768px) {
+                .controls {
+                    flex-direction: column;
+                    align-items: stretch;
                 }
-
-                main {
-                    padding-inline: 1rem;
-                }
-                nav {
-                    justify-content: center;
-                    align-items: center;
-                    ul li a {
-                        font-size: 1.55rem;
-                    }
-                }
-                nav .logo {
-                    img {
-                        width: 100px;
-                    }
-                    justify-self: flex-start;
-                    position: absolute;
-                    left: 10px;
-                    top: 24px;
-                }
-
-                nav ul li:last-child {
-                    position: absolute;
-                    right: 10px;
-                }
-
-                h1 {
-                    font-size: 2.25rem;
-                }
-
-                .icon-grid {
-                    gap: 12px;
-                    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-                }
-
-                .icon-container {
-                    width: 70px;
-                }
-
-                .icon-container img {
-                    width: 48px;
-                    height: 48px;
-                }
-
-                .icon-container img:hover {
-                    width: 40px;
-                    height: 40px;
-                }
-            }
-
-            @media (max-width: 480px) {
-                body {
-                    background: #092635;
-                    margin-inline: 0;
-                    padding: 0;
-                }
-
-                nav ul li a {
-                    font-size: 1.35rem;
-                }
-                nav .logo {
-                    top: 16px;
-                }
-                nav .logo img {
-                    content: url("https://raw.githubusercontent.com/YuheshPandian/ICONIC/refs/heads/main/icons/dark/iconic.svg");
-                    width: 50px;
-                }
-
-                h1 {
-                    font-size: 2.25rem;
-                }
-
-                .search-bar {
-                    max-width: 95%;
-                    padding: 8px 12px;
-                }
-
-                .search-bar input {
-                    font-size: 16px;
-                }
-
-                .search-bar .search-btn {
-                    font-size: 16px;
-                }
-
-                .icon-grid {
-                    gap: 8px;
-                    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
-                }
-
-                .icon-container {
-                    width: 60px;
-                    position: relative;
-                }
-
-                .icon-container img {
-                    width: 54px;
-                    height: 54px;
-                }
-
-                .icon-container img:hover {
-                    width: 54px;
-                    height: 54px;
-                }
-
-                .icon-container .label {
-                    display: none;
-                }
-
-                .icon-container:focus {
-                    .label {
-                        display: absolute;
-                        z-index: 100;
-                        opacity: 65%;
-                    }
-                }
-                .copy-info-text {
-                    display: none;
+                .toggle-btn {
+                    width: 100%;
+                    text-align: center;
                 }
             }
         </style>
     </head>
+
     <body>
         <header>
             <nav>
-                <span class="logo"
-                    ><img
+                <span class="logo">
+                    <img
                         src="https://raw.githubusercontent.com/YuheshPandian/ICONIC/refs/heads/main/assets/Banner.svg"
-                        alt="Logo"
                         width="150px"
-                /></span>
+                    />
+                </span>
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="/gallery/">Gallery</a></li>
@@ -379,32 +283,26 @@
         <main>
             <h1>Icon Gallery</h1>
 
-            <button class="toggle-btn" onclick="toggleTheme()">
-                Toggle Icon Theme
-            </button>
+            <section class="controls">
+                <p class="icon-count">
+                    Showing {{ icon_count }} icons {% if query %} for "<strong
+                        >{{ query }}</strong
+                    >"{% endif %}
+                </p>
 
-            <form action="/gallery/" method="GET" class="search-bar">
-                <input
-                    type="text"
-                    name="query"
-                    id="search-input"
-                    placeholder="Search Icon"
-                />
-                <button type="submit" class="search-btn">
-                    <i class="fas fa-search"></i>
+                <button class="toggle-btn" onclick="toggleTheme()">
+                    Toggle Icon Theme
                 </button>
-            </form>
 
-            <p
-                style="
-                    color: #5c8374de;
-                    font-family: poppins, sans-serif;
-                    margin-block: 20px;
-                "
-                class="copy-info-text"
-            >
-                Click on label to copy HTML snippet
-            </p>
+                <form action="/gallery/" method="GET" class="search-bar">
+                    <input type="text" name="query" placeholder="Search Icon" />
+                    <button type="submit" class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </section>
+
+            <p class="copy-info-text">Click on label to copy HTML snippet</p>
 
             <div id="icon-section-dark" class="icon-grid">
                 {% for icon in dark_icons %}
@@ -451,7 +349,6 @@
             function showPopup(message) {
                 const popup = document.createElement("div");
                 popup.textContent = message;
-
                 Object.assign(popup.style, {
                     position: "fixed",
                     bottom: "40px",
@@ -463,58 +360,33 @@
                     borderRadius: "10px",
                     fontFamily: "Inter, sans-serif",
                     fontSize: "1rem",
-                    boxShadow: "0 4px 12px rgba(0, 0, 0, 0.25)",
+                    boxShadow: "0 4px 12px rgba(0,0,0,0.25)",
                     opacity: "1",
                     transition: "opacity 0.4s ease",
                     zIndex: "9999",
                 });
-
                 document.body.appendChild(popup);
-
-                setTimeout(() => {
-                    popup.style.opacity = "0";
-                }, 2000);
-                setTimeout(() => {
-                    popup.remove();
-                }, 2500);
+                setTimeout(() => (popup.style.opacity = "0"), 2000);
+                setTimeout(() => popup.remove(), 2500);
             }
 
             function copyLabelText(element, theme) {
                 const text = element.textContent.trim();
                 const content = `<img src="https://iconic-api.onrender.com/${theme}/${text}" width="64px" />`;
-
-                if (!navigator.clipboard) {
-                    showPopup("Clipboard not supported");
-                    return;
-                }
-
                 navigator.clipboard
                     .writeText(content)
-                    .then(() => {
-                        showPopup(`Copied "${text}" to clipboard!`);
-                    })
-                    .catch((err) => {
-                        console.error("Clipboard copy failed:", err);
-                        showPopup("Failed to copy!");
-                    });
+                    .then(() => showPopup(`Copied "${text}" to clipboard!`))
+                    .catch(() => showPopup("Failed to copy!"));
             }
 
             let isDarkTheme = true;
-
             function toggleTheme() {
                 const darkSection =
                     document.getElementById("icon-section-dark");
                 const lightSection =
                     document.getElementById("icon-section-light");
-
-                if (isDarkTheme) {
-                    darkSection.style.display = "none";
-                    lightSection.style.display = "grid";
-                } else {
-                    darkSection.style.display = "grid";
-                    lightSection.style.display = "none";
-                }
-
+                darkSection.style.display = isDarkTheme ? "none" : "grid";
+                lightSection.style.display = isDarkTheme ? "grid" : "none";
                 isDarkTheme = !isDarkTheme;
             }
         </script>
