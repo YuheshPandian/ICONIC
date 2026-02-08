@@ -245,12 +245,127 @@
                 }
             }
 
-            /* MOBILE */
-            @media (max-width: 768px) {
+            @media (max-width: 900px) {
+                body {
+                    font-size: 18px;
+                }
+
+                main {
+                    padding-inline: 2rem;
+                }
+                nav {
+                    justify-content: center;
+                    align-items: center;
+                    ul li a {
+                        font-size: 1.55rem;
+                    }
+                }
+                nav .logo {
+                    img {
+                        width: 100px;
+                    }
+                    justify-self: flex-start;
+                    position: absolute;
+                    left: 10px;
+                    top: 24px;
+                }
+
+                nav ul li:last-child {
+                    position: absolute;
+                    right: 10px;
+                }
+
+                h1 {
+                    font-size: 3.25rem;
+                }
+
+                h2 {
+                    font-size: 2.25rem;
+                }
+
+                .preview-img {
+                    width: 100%;
+                }
+
+                p {
+                    font-size: 1.55rem;
+                }
+
+                ul li {
+                    font-size: 1.25rem;
+                }
+
+                .highlights ul {
+                    grid-template-columns: 1fr 1fr;
+                }
+                .highlights ul li {
+                    padding: 8px;
+                    font-size: 1.05rem;
+                    min-height: 60px;
+                }
+            }
+
+            @media (max-width: 480px) {
+                body {
+                    background: #092635;
+                }
+
+                nav ul li a {
+                    font-size: 1.35rem;
+                }
+                nav .logo {
+                    top: 16px;
+                }
+                nav .logo img {
+                    content: url("https://raw.githubusercontent.com/YuheshPandian/ICONIC/refs/heads/main/icons/dark/iconic.svg");
+                    width: 50px;
+                }
+
+                h1 {
+                    font-size: 2.25rem;
+                }
+                h2 {
+                    font-size: 2rem;
+                }
+                p {
+                    font-size: 1rem;
+                }
+
+                main ul li {
+                    font-size: 1.05rem;
+                }
+
+                .highlights ul {
+                    grid-template-columns: 1fr;
+                }
+                .highlights ul li {
+                    padding: 8px;
+                    font-size: 0.9rem;
+                    min-height: 30px;
+                    width: 100%;
+                }
+
+                .quick-preview-header {
+                    display: none;
+                }
+                .preview-img {
+                    z-index: -1;
+                    margin-block: 10px;
+                }
+                .preview-section {
+                    display: grid;
+                    place-content: center;
+
+                    > * {
+                        grid-area: 1 / 1;
+                    }
+                }
+
                 .controls {
                     flex-direction: column;
                     align-items: stretch;
                 }
+
                 .toggle-btn {
                     width: 100%;
                     text-align: center;
